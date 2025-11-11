@@ -7,10 +7,12 @@ use Illuminate\Support\ServiceProvider;
 use App\Repositories\Interfaces\ClienteRepositoryInterface;
 use App\Repositories\Interfaces\SucursalRepositoryInterface;
 use App\Repositories\Interfaces\InsumoRepositoryInterface;
+use App\Repositories\Interfaces\ActivoRepositoryInterface;
 
 use App\Repositories\ClienteRepository;
 use App\Repositories\SucursalRepository;
 use App\Repositories\InsumoRepository;
+use App\Repositories\ActivoRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,16 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             InsumoRepositoryInterface::class,
             InsumoRepository::class
+        );
+        
+        $this->app->bind(
+            InsumoRepositoryInterface::class,
+            InsumoRepository::class
+        );
+
+        $this->app->bind(
+            ActivoRepositoryInterface::class,
+            ActivoRepository::class
         );
     }
 
